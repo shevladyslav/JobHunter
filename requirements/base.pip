@@ -1,0 +1,8 @@
+aiogram==3.10.0             # Modern and fully asynchronous framework for Telegram Bot API
+requests==2.32.3            # Python HTTP for Humans.
+beautifulsoup4==4.12.3      # Screen-scraping library
+psycopg2-binary==2.9.9      # psycopg2 - Python-PostgreSQL Database Adapter
+SQLAlchemy==2.0.31          # Database Abstraction Library
+alembic==1.13.2             # A database migration tool for SQLAlchemy.
+python-dotenv==1.0.1        # Read key-value pairs from a .env file and set them as environment variables
+pre-commit==3.7.1           # A framework for managing and maintaining multi-language pre-commit hooks.

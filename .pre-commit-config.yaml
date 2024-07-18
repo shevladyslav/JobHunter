@@ -1,0 +1,17 @@
+repos:
+  - repo: local
+    hooks:
+      - id: isort
+        name: isort
+        language: python
+        entry: isort
+        additional_dependencies: [ 'isort' ]
+        types: [ python ]
+        args: ["--profile", "black",]
+
+      - id: black
+        name: black
+        language: python
+        entry: black
+        additional_dependencies: ['black']
+        types: [python]
