@@ -1,3 +1,5 @@
+from datetime import datetime, timedelta
+
 from aiogram.types import Message
 from sqlalchemy.orm import Session
 
@@ -34,3 +36,17 @@ class UserService(BaseService):
         if not existing_user:
             return self._create_user(message)
         return existing_user
+
+    def get_today_vacancies_by_user(self, user_id: int):
+        today = datetime.utcnow().date()
+        start_of_day = datetime(today.year, today.month, today.day)
+        end_of_day = start_of_day + timedelta(days=1)
+
+        user = self.db_session.query(User).filter(User.id == user_id).first()
+        if user:
+            return [
+                vacancy
+                for vacancy in user.vacancies
+                if start_of_day <= vacancy.publication_date < end_of_day
+            ]
+        return []

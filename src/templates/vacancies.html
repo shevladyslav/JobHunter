@@ -1,0 +1,8 @@
+<b>Ваші вакансії:</b>
+
+{% for vacancy in vacancies %}
+<b>Посада:</b> {{ vacancy.job_title }}
+<b>Компанія:</b> {{ vacancy.company_name }}
+<b>Дата публікації:</b> {{ vacancy.publication_date.strftime('%H:%M %d.%m.%Y') }}
+<b>Посилання:</b> <a href="https://djinni.co{{ vacancy.vacancy_link }}">{{ vacancy.vacancy_link }}</a>
+{% endfor %}
